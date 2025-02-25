@@ -1,17 +1,22 @@
+import "./Navigation.css";
+
 export default function Navigation() {
   return (
     <>
       <header>
         <nav>
-          <ul>
+          <ul className="nav-bar">
             <li>
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/">Menu</a>
+              <a href="/menu">Menu</a>
             </li>
             <li>
-              <a href="/">Register</a>
+              <a href="/users/login">Login</a>
+            </li>
+            <li>
+              <a href="/register">Register</a>
             </li>
           </ul>
         </nav>

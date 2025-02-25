@@ -1,0 +1,15 @@
+.nav-bar {
+  background-color: bisque;
+  text-decoration: none;
+  list-style: none;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  background-color: rgb(20, 203, 127);
+  margin: 5px;
+  padding: 20px;
+}

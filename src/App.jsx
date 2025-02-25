@@ -1,4 +1,6 @@
-import Navigation from "./components/Navigation";
+import "./styles/reset.css";
+
+import Navigation from "./components/navigation/Navigation";
 
 function App() {
   return (
