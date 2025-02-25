@@ -4,8 +4,8 @@ export default function Navigation() {
   return (
     <>
       <header>
-        <nav>
-          <ul className="nav-bar">
+        <nav className="nav">
+          <ul className="nav-list">
             <li>
               <a href="/">Home</a>
             </li>

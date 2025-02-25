@@ -1,6 +1,5 @@
-.nav-bar {
+.nav-list {
   background-color: bisque;
-  text-decoration: none;
   list-style: none;
   height: 70px;
   display: flex;

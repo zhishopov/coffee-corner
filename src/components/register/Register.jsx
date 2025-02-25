@@ -1,7 +1,9 @@
+import "./Register.css";
+
 export default function Register() {
   return (
     <>
-      <form method="POST">
+      <form method="POST" id="register-form">
         <div>
           <label htmlFor="email">
             Email:
@@ -21,7 +23,7 @@ export default function Register() {
           </label>
         </div>
         <div>
-          <button>Register</button>
+          <button id="register-btn">Register</button>
         </div>
       </form>
     </>
