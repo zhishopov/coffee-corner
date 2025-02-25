@@ -13,7 +13,7 @@ export default function Navigation() {
               <a href="/menu">Menu</a>
             </li>
             <li>
-              <a href="/users/login">Login</a>
+              <a href="/login">Login</a>
             </li>
             <li>
               <a href="/register">Register</a>
