@@ -1,22 +1,30 @@
 import "./Navigation.css";
 
-export default function Navigation() {
+export default function Navigation(props) {
   return (
     <>
       <header>
         <nav className="nav">
           <ul className="nav-list">
             <li>
-              <a href="/">Home</a>
+              <a href="/" onClick={() => props.onNavigate("home")}>
+                Home
+              </a>
             </li>
             <li>
-              <a href="/menu">Menu</a>
+              <a href="#" onClick={() => props.onNavigate("menu")}>
+                Menu
+              </a>
             </li>
             <li>
-              <a href="/login">Login</a>
+              <a href="#" onClick={() => props.onNavigate("login")}>
+                Login
+              </a>
             </li>
             <li>
-              <a href="/register">Register</a>
+              <a href="#" onClick={() => props.onNavigate("register")}>
+                Register
+              </a>
             </li>
           </ul>
         </nav>
