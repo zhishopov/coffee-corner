@@ -1,0 +1,144 @@
+{
+  "products": [
+    {
+      "name": "Espresso",
+      "price": 2.5,
+      "description": "Strong and bold espresso shot.",
+      "image": "/images/espresso.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Latte",
+      "price": 3.5,
+      "description": "Creamy latte with steamed milk.",
+      "image": "/images/latte.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Cappuccino",
+      "price": 3.0,
+      "description": "Rich cappuccino with a velvety foam.",
+      "image": "/images/cappuccino.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Americano",
+      "price": 2.75,
+      "description": "Smooth Americano for a gentle start.",
+      "image": "/images/americano.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Mocha",
+      "price": 3.75,
+      "description": "Delicious mocha with a hint of chocolate.",
+      "image": "/images/mocha.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Sausage Roll",
+      "price": 2.0,
+      "description": "Flaky pastry filled with seasoned sausage.",
+      "image": "/images/sausage-roll.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Bacon Bap",
+      "price": 2.5,
+      "description": "Toasted bap loaded with crispy bacon and butter.",
+      "image": "/images/bacon-bap.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Croissant",
+      "price": 2.75,
+      "description": "Buttery, flaky croissant, freshly baked.",
+      "image": "/images/croissant.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Muffin",
+      "price": 2.25,
+      "description": "Moist muffin available in blueberry or chocolate chip.",
+      "image": "/images/muffin.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Scone",
+      "price": 2.0,
+      "description": "Traditional scone served with jam and clotted cream.",
+      "image": "/images/scone.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Bagel with Cream Cheese",
+      "price": 3.0,
+      "description": "Freshly baked bagel topped with smooth cream cheese.",
+      "image": "/images/bagel-cream-cheese.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Bacon Sandwich",
+      "price": 4.0,
+      "description": "Crispy bacon with lettuce and tomato on artisan bread.",
+      "image": "/images/bacon-sandwich.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Ham & Cheese Toastie",
+      "price": 3.5,
+      "description": "Grilled toastie with ham and melted cheese.",
+      "image": "/images/ham-cheese-toastie.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Veggie Quiche",
+      "price": 4.5,
+      "description": "Savory quiche filled with fresh vegetables and cheese.",
+      "image": "/images/veggie-quiche.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Chicken Salad Wrap",
+      "price": 5.0,
+      "description": "Healthy wrap with grilled chicken and crisp veggies.",
+      "image": "/images/chicken-salad-wrap.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Cheese Danish",
+      "price": 3.0,
+      "description": "Sweet Danish pastry with a rich cheese filling.",
+      "image": "/images/cheese-danish.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Fruit Tart",
+      "price": 4.0,
+      "description": "Pastry tart filled with cream and topped with fresh fruit.",
+      "image": "/images/fruit-tart.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Blueberry Muffin",
+      "price": 2.5,
+      "description": "Delicious muffin bursting with blueberries.",
+      "image": "/images/blueberry-muffin.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Chocolate Cake Slice",
+      "price": 3.75,
+      "description": "Rich slice of chocolate cake with creamy frosting.",
+      "image": "/images/chocolate-cake.jpg",
+      "likes": 0
+    },
+    {
+      "name": "Carrot Cake",
+      "price": 3.5,
+      "description": "Moist carrot cake with a light cream cheese frosting.",
+      "image": "/images/carrot-cake.jpg",
+      "likes": 0
+    }
+  ]
+}

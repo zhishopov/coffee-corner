@@ -12,7 +12,7 @@ export default function Navigation(props) {
               </a>
             </li>
             <li>
-              <a href="#" onClick={() => props.onNavigate("menu")}>
+              <a href="/data/products" onClick={() => props.onNavigate("menu")}>
                 Menu
               </a>
             </li>

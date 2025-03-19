@@ -1,6 +1,7 @@
 import "./styles/reset.css";
 
 import Navigation from "./components/navigation/Navigation";
+import Menu from "./components/menu/Menu";
 import Register from "./components/register/Register";
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ function App() {
     <>
       <Navigation onNavigate={navigationhandler}></Navigation>
       {currentPage === "register" && <Register></Register>}
+      {currentPage === "menu" && <Menu></Menu>}
       {currentPage === "home" && <h1>Home Page</h1>}
     </>
   );
