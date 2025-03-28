@@ -11,7 +11,10 @@ export default function Navigation() {
           </Link>
         </h1>
         <nav>
+          <Link to="/">Home</Link>
           <Link to="/menu">Menu</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
         </nav>
       </header>
     </>
