@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import menuService from "../../services/menuService.js";
 
+import "./Menu.css";
+
 export default function Menu() {
   const [products, setProducts] = useState([]);
 
@@ -22,7 +24,7 @@ export default function Menu() {
           <p>Name: {product.name}</p>
           <p>Description: {product.description}</p>
           <p>Price: </p>
-          <p>Image: </p>
+          <img src={product.image} alt="Coffee" id="coffee" />
         </>
       ))}
     </div>
