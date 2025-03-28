@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   height: 100%;
   font-size: 100%;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Georgia", serif;
+  background-color: #f7f4ed;
+  color: #3b2f2f;
 }
