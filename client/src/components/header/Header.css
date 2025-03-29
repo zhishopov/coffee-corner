@@ -38,3 +38,18 @@ h1 {
 .link:hover {
   background-color: #f4780b;
 }
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link {
+    padding: 10px 20px;
+  }
+
+  header {
+    padding: 15px 0;
+  }
+}

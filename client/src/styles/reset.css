@@ -14,7 +14,8 @@ body {
   line-height: 1.5;
   font-size: 100%;
   color: white;
-  background-image: url("public/images/main.png");
+  background-image: url("public/images/main.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Keeps image at the same place when scrolling */
 }
