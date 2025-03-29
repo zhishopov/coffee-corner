@@ -11,10 +11,18 @@ export default function Header() {
           </Link>
         </h1>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/menu">Menu</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <Link to="/" className="link">
+            Home
+          </Link>
+          <Link to="/menu" className="link">
+            Menu
+          </Link>
+          <Link to="/login" className="link">
+            Login
+          </Link>
+          <Link to="/register" className="link">
+            Register
+          </Link>
         </nav>
       </header>
     </>

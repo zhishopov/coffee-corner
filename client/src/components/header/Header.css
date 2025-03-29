@@ -5,9 +5,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffdcb8;
+  background-color: transparent;
   padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(255, 181, 77, 0.9);
 }
 
 h1 {
@@ -21,9 +20,21 @@ h1 {
 
 .home {
   text-decoration: none;
-  color: #8c5c4f;
+  color: white;
 }
 
 .home:hover {
   color: #f4780b;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.link:hover {
+  background-color: #f4780b;
 }

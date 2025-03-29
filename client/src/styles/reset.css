@@ -11,4 +11,10 @@ body {
   padding: 0;
   height: 100vh; /* Take the full viewport */
   font-family: "Zain", serif;
+  line-height: 1.5;
+  font-size: 100%;
+  color: white;
+  background-image: url("public/images/main.png");
+  background-size: cover;
+  background-position: center;
 }
