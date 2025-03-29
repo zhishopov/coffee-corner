@@ -1,15 +1,16 @@
 import { Routes, Route } from "react-router";
 import "./styles/reset.css";
-import Navigation from "./components/navigation/Navigation";
+import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Menu from "./components/menu/Menu";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <div id="box">
-      <Navigation></Navigation>
+      <Header></Header>
       <div id="main-content">
         <Routes>
           <Route index element={<Home></Home>}></Route>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register></Register>}></Route>
         </Routes>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

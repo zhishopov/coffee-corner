@@ -1,11 +1,11 @@
 import { Link } from "react-router";
-import "./Navigation.css";
+import "./Header.css";
 
-export default function Navigation() {
+export default function Header() {
   return (
     <>
       <header>
-        <h1>
+        <h1 id="heading">
           <Link className="home" to="/">
             The Coffee Corner
           </Link>
