@@ -2,10 +2,11 @@
 
 .main-content {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100vh;
-  padding-right: 5%;
+  justify-content: center;
+  align-items: flex-end;
+  height: 60vh;
+  padding-bottom: 5%;
+  margin-left: 50%;
 }
 
 .browse {
@@ -22,4 +23,10 @@
 .browse:hover {
   background-color: white;
   color: #f4780b;
+}
+
+.top-three {
+  background-color: red;
+  /* background: transparent; */
+  height: 40vh;
 }
