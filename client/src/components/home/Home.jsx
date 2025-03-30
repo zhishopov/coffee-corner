@@ -1,21 +1,31 @@
+import { useEffect, useState } from "react";
 import "./Home.css";
+import menuService from "../../services/menuService";
 
 export default function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    try {
+      menuService.getAllProducts().then((result) => {
+        setProducts(result.products);
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, []);
+
   return (
     <>
       <div className="main-content">
         <button className="browse">Book a Table</button>
       </div>
       <div className="top-three">
-        <div className="product-box">
-          <h3>Prodcut 1</h3>
-        </div>
-        <div className="product-box">
-          <h3>Prodcut 2</h3>
-        </div>
-        <div className="product-box">
-          <h3>Prodcut 3</h3>
-        </div>
+        {products.slice(0, 3).map((product, index) => (
+          <div key={index} className="product-box">
+            <h3>{product.name}</h3>
+          </div>
+        ))}
       </div>
     </>
   );
