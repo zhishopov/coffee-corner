@@ -2,8 +2,8 @@ import "./Home.css";
 
 export default function Home() {
   return (
-    <>
-      <button>Browse</button>
-    </>
+    <div className="main-content">
+      <button className="browse">Browse</button>
+    </div>
   );
 }

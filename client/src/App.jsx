@@ -5,7 +5,6 @@ import Home from "./components/home/Home";
 import Menu from "./components/menu/Menu";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
-import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -18,8 +17,6 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
-
-      <Footer></Footer>
     </div>
   );
 }
