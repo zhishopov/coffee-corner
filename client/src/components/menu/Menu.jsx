@@ -9,6 +9,8 @@ export default function Menu() {
   useEffect(() => {
     getAllProducts()
       .then((result) => {
+        console.log(result);
+
         if (result && result.products) {
           setProducts(result.products);
         } else {

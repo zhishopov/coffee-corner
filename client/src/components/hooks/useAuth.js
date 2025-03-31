@@ -6,21 +6,28 @@ export default function useAuth() {
   const { accessToken, ...authData } = useContext(UserContext);
 
   const requestWrapper = useCallback(
-    (method, url, data, options = {}) => {
-      const authOptions = {
-        ...options,
-        headers: {
-          "X-Authorization": accessToken,
-          ...options.headers,
-        },
-      };
+    async (method, url, data, options = {}) => {
+      try {
+        const authOptions = {
+          ...options,
+          headers: {
+            ...(accessToken && { "X-Authorization": accessToken }), // Add token only if available
+            ...options.headers,
+          },
+        };
 
-      return request.baseRequest(
-        method,
-        url,
-        data,
-        accessToken ? authOptions : options
-      );
+        const response = await request.baseRequest(
+          method,
+          url,
+          data,
+          accessToken ? authOptions : options
+        );
+
+        return response;
+      } catch (error) {
+        console.error(`Error in ${method} request to ${url}:`, error);
+        throw error; // Re-throw error so components using this hook can handle it
+      }
     },
     [accessToken]
   );
