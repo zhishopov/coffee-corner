@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
+import { getAllProducts } from "../../api/menuApi";
 import "./Home.css";
-import menuService from "../../services/menuService";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    try {
-      menuService.getAllProducts().then((result) => {
-        setProducts(result.products);
+    getAllProducts()
+      .then((result) => {
+        if (result && result.products) {
+          setProducts(result.products.slice(0, 3));
+        } else {
+          setError("No products found.");
+        }
+      })
+      .catch((error) => {
+        setError(error.message || "Failed to fetch products.");
       });
-    } catch (error) {
-      console.log(error.message);
-    }
   }, []);
 
   return (
@@ -20,12 +25,24 @@ export default function Home() {
       <div className="main-content">
         <button className="browse">Book a Table</button>
       </div>
+
       <div className="top-three">
-        {products.slice(0, 3).map((product, index) => (
-          <div key={index} className="product-box">
-            <h3>{product.name}</h3>
-          </div>
-        ))}
+        {error && <p className="error-message">{error}</p>}{" "}
+        {products.length === 0 ? (
+          <p>No products available.</p>
+        ) : (
+          products.map((product, index) => (
+            <div key={index} className="product-box">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="product-image"
+              />
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+            </div>
+          ))
+        )}
       </div>
     </>
   );
