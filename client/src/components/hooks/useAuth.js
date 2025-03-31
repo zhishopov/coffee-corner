@@ -26,7 +26,7 @@ export default function useAuth() {
         return response;
       } catch (error) {
         console.error(`Error in ${method} request to ${url}:`, error);
-        throw error; // Re-throw error so components using this hook can handle it
+        throw error;
       }
     },
     [accessToken]

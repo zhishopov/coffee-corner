@@ -1,26 +1,39 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
-export default function usePersistedState(stateKey, initalState) {
+export default function usePersistedState(stateKey, initialState) {
   const [state, setState] = useState(() => {
-    const persistedState = localStorage.getItem(stateKey);
-    if (!persistedState) {
-      return typeof initalState === "function" ? initalState() : initalState;
+    try {
+      const persistedState = localStorage.getItem(stateKey);
+      if (!persistedState) {
+        return typeof initialState === "function"
+          ? initialState()
+          : initialState;
+      }
+      return JSON.parse(persistedState);
+    } catch (error) {
+      console.error(
+        `Error loading persisted state for key "${stateKey}":`,
+        error
+      );
+      return typeof initialState === "function" ? initialState() : initialState;
     }
-
-    const persistedStateData = JSON.parse(persistedState);
-
-    return persistedStateData;
   });
 
-  const setPersistedState = (input) => {
-    const data = typeof input === "function" ? input(state) : input;
-
-    const persistedData = JSON.stringify(data);
-
-    localStorage.setItem(stateKey, persistedData);
-
-    setState(data);
-  };
+  const setPersistedState = useCallback(
+    (input) => {
+      try {
+        const data = typeof input === "function" ? input(state) : input;
+        localStorage.setItem(stateKey, JSON.stringify(data));
+        setState(data);
+      } catch (error) {
+        console.error(
+          `Error saving state to localStorage for key "${stateKey}":`,
+          error
+        );
+      }
+    },
+    [state, stateKey]
+  );
 
   return [state, setPersistedState];
 }
