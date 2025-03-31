@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router";
+
 import "./styles/reset.css";
+
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Menu from "./components/menu/Menu";
@@ -8,20 +10,36 @@ import Register from "./components/register/Register";
 import BookTable from "./components/book-table/BookTable";
 import MyBookings from "./components/my-bookings/MyBookings";
 
+import UserProvider from "./providers/UserProvider";
+
+import AuthGuard from "./components/guards/AuthGuard";
+import GuestGuard from "./components/guards/GuestGuard";
+
 function App() {
   return (
-    <div id="box">
-      <Header></Header>
+    <UserProvider>
+      <div id="box">
+        <Header />
 
-      <Routes>
-        <Route index element={<Home></Home>}></Route>
-        <Route path="/menu" element={<Menu></Menu>}></Route>
-        <Route path="/book-table" element={<BookTable></BookTable>}></Route>
-        <Route path="/my-bookings" element={<MyBookings></MyBookings>}></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
-      </Routes>
-    </div>
+        <main id="main-content">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+
+            <Route path="/book-table" element={<BookTable />} />
+
+            <Route element={<GuestGuard />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
+
+            <Route element={<AuthGuard />}>
+              <Route path="/my-bookings" element={<MyBookings />} />
+            </Route>
+          </Routes>
+        </main>
+      </div>
+    </UserProvider>
   );
 }
 

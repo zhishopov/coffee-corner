@@ -1,7 +1,10 @@
 import { Link } from "react-router";
+
 import "./Header.css";
+import useAuth from "../hooks/useAuth";
 
 export default function Header() {
+  const { isAuthenticated } = useAuth();
   return (
     <>
       <header>
@@ -17,12 +20,25 @@ export default function Header() {
           <Link to="/menu" className="link">
             Menu
           </Link>
-          <Link to="/login" className="link">
-            Login
-          </Link>
-          <Link to="/register" className="link">
-            Register
-          </Link>
+          {!isAuthenticated ? (
+            <>
+              <Link to="/login" className="link">
+                Login
+              </Link>
+              <Link to="/register" className="link">
+                Register
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/my-bookings" className="link">
+                My Bookings
+              </Link>
+              <Link to="/logout" className="link">
+                Logout
+              </Link>
+            </>
+          )}
           <Link to="/book-table" className="link">
             Book Table
           </Link>
