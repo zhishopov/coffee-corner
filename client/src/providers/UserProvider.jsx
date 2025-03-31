@@ -5,11 +5,19 @@ export default function UserProvider({ children }) {
   const [authData, setAuthData] = usePersistedState("auth", {});
 
   const userLoginHandler = (resultData) => {
-    setAuthData(resultData);
+    try {
+      setAuthData(resultData || {}); // Make sure it's  object
+    } catch (error) {
+      console.error("Error storing authentication data:", error);
+    }
   };
 
   const userLogoutHandler = () => {
-    setAuthData({});
+    try {
+      setAuthData({});
+    } catch (error) {
+      console.error("Error clearing authentication data:", error);
+    }
   };
 
   return (
