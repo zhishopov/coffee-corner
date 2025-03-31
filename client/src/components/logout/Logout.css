@@ -1,0 +1,29 @@
+.logout-container {
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: rgba(255, 247, 230, 0.9);
+  border-radius: 12px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+  font-family: "Zain", serif;
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+h2 {
+  color: #d48426;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+p {
+  color: #333;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .logout-container {
+    max-width: 90%;
+    padding: 25px;
+  }
+}
