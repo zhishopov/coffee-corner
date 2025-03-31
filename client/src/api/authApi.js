@@ -3,15 +3,11 @@ import { useContext } from "react";
 import request from "../utils/request";
 import { UserContext } from "../contexts/UserContext";
 
-const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
+const baseUrl = "http://localhost:3030/users";
 
 export const useLogin = () => {
   const login = async (email, password) =>
-    request.post(
-      `${baseUrl}/login`,
-      { email, password }
-      // { signal: abortRef.current.signal }
-    );
+    request.post(`${baseUrl}/login`, { email, password });
 
   return {
     login,
