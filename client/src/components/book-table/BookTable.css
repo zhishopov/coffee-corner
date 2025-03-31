@@ -1,22 +1,19 @@
-/* Center the form */
 .book-table {
-  max-width: 400px;
+  max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  background: rgba(255, 247, 230, 0.9); /* Light warm white */
+  background: rgba(255, 247, 230, 0.9);
   border-radius: 12px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* Form Heading */
 .book-table h2 {
   color: #d48426;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-/* Labels */
 .book-table label {
   display: block;
   font-weight: bold;
@@ -25,7 +22,6 @@
   text-align: left;
 }
 
-/* Input Fields */
 .book-table input {
   width: 100%;
   padding: 10px;
@@ -42,9 +38,8 @@
   border-color: #e07a3e;
 }
 
-/* Submit Button */
 .book-table button {
-  background-color: rgba(244, 162, 97, 0.9); /* Warm orange */
+  background-color: rgba(244, 162, 97, 0.9);
   color: white;
   border: none;
   border-radius: 8px;
@@ -58,7 +53,7 @@
 }
 
 .book-table button:hover {
-  background-color: rgba(224, 122, 62, 0.9); /* Slightly darker orange */
+  background-color: rgba(224, 122, 62, 0.9);
   transform: scale(1.05);
 }
 
@@ -66,7 +61,6 @@
   transform: scale(0.95);
 }
 
-/* Success/Error Message */
 .message {
   margin-top: 15px;
   font-weight: bold;
