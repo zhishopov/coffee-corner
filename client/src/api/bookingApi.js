@@ -6,27 +6,41 @@ const baseUrl = "http://localhost:3030/data/bookings";
 
 export const useBookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    request.get(baseUrl).then(setBookings);
+    request
+      .get(baseUrl)
+      .then(setBookings)
+      .catch((err) => {
+        console.error("Error fetching bookings:", err);
+        setError("Failed to load bookings.");
+      });
   }, []);
 
-  return { bookings };
+  return { bookings, error };
 };
 
 export const useBooking = (bookingId) => {
   const [booking, setBooking] = useState({});
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    request.get(`${baseUrl}/${bookingId}`).then(setBooking);
+    request
+      .get(`${baseUrl}/${bookingId}`)
+      .then(setBooking)
+      .catch((err) => {
+        console.error(`Error fetching booking ${bookingId}:`, err);
+        setError("Failed to load booking details.");
+      });
   }, [bookingId]);
 
-  return { booking };
+  return { booking, error };
 };
 
-// Fetch the latest 3 bookings (if needed for a dashboard)
 export const useLatestBookings = () => {
   const [latestBookings, setLatestBookings] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const searchParams = new URLSearchParams({
@@ -37,16 +51,27 @@ export const useLatestBookings = () => {
 
     request
       .get(`${baseUrl}?${searchParams.toString()}`)
-      .then(setLatestBookings);
+      .then(setLatestBookings)
+      .catch((err) => {
+        console.error("Error fetching latest bookings:", err);
+        setError("Failed to load latest bookings.");
+      });
   }, []);
 
-  return { latestBookings };
+  return { latestBookings, error };
 };
 
 export const useCreateBooking = () => {
   const { request } = useAuth();
 
-  const create = (bookingData) => request.post(baseUrl, bookingData);
+  const create = async (bookingData) => {
+    try {
+      return await request.post(baseUrl, bookingData);
+    } catch (err) {
+      console.error("Error creating booking:", err);
+      throw new Error("Booking creation failed.");
+    }
+  };
 
   return { create };
 };
@@ -54,8 +79,17 @@ export const useCreateBooking = () => {
 export const useEditBooking = () => {
   const { request } = useAuth();
 
-  const edit = (bookingId, bookingData) =>
-    request.put(`${baseUrl}/${bookingId}`, { ...bookingData, _id: bookingId });
+  const edit = async (bookingId, bookingData) => {
+    try {
+      return await request.put(`${baseUrl}/${bookingId}`, {
+        ...bookingData,
+        _id: bookingId,
+      });
+    } catch (err) {
+      console.error(`Error editing booking ${bookingId}:`, err);
+      throw new Error("Booking update failed.");
+    }
+  };
 
   return { edit };
 };
@@ -63,8 +97,14 @@ export const useEditBooking = () => {
 export const useDeleteBooking = () => {
   const { request } = useAuth();
 
-  const deleteBooking = (bookingId) =>
-    request.delete(`${baseUrl}/${bookingId}`);
+  const deleteBooking = async (bookingId) => {
+    try {
+      return await request.delete(`${baseUrl}/${bookingId}`);
+    } catch (err) {
+      console.error(`Error deleting booking ${bookingId}:`, err);
+      throw new Error("Booking deletion failed.");
+    }
+  };
 
   return { deleteBooking };
 };
