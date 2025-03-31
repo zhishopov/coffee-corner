@@ -28,7 +28,8 @@ export default function Login() {
     }
 
     try {
-      await login(formData.email, formData.password);
+      const user = await login(formData.email, formData.password);
+      localStorage.setItem("userId", user.id);
       setMessage("Login successful!");
       navigate("/");
     } catch (err) {

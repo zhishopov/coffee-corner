@@ -5,9 +5,20 @@ import { UserContext } from "../contexts/UserContext";
 const baseUrl = "http://localhost:3030/users";
 
 export const useLogin = () => {
+  const { userLoginHandler } = useContext(UserContext);
+
   const login = async (email, password) => {
     try {
-      return await request.post(`${baseUrl}/login`, { email, password });
+      const response = await request.post(`${baseUrl}/login`, {
+        email,
+        password,
+      });
+
+      if (response && response.accessToken) {
+        userLoginHandler(response);
+      }
+
+      return response;
     } catch (error) {
       console.error("Login failed:", error.message);
       throw new Error("Login failed. Please check your credentials.");
@@ -31,20 +42,20 @@ export const useRegister = () => {
 };
 
 export const useLogout = () => {
-  const { accessToken, userLogoutHandler } = useContext(UserContext);
+  const { authData, userLogoutHandler } = useContext(UserContext);
 
   useEffect(() => {
-    if (!accessToken) return;
+    if (!authData?.accessToken) return;
 
     const options = {
-      headers: { "X-Authorization": accessToken },
+      headers: { "X-Authorization": authData.accessToken },
     };
 
     request
       .get(`${baseUrl}/logout`, null, options)
       .catch((error) => console.error("Logout failed:", error.message))
       .finally(userLogoutHandler);
-  }, [accessToken, userLogoutHandler]);
+  }, [authData, userLogoutHandler]);
 
-  return { isLoggedOut: !accessToken };
+  return { isLoggedOut: !authData };
 };
