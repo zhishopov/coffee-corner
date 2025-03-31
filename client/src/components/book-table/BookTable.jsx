@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useCreateBooking } from "../../api/bookingApi";
 import "./BookTable.css";
+import { useNavigate } from "react-router";
 
 export default function BookTable() {
+  const navigate = useNavigate();
   const { create } = useCreateBooking();
   const [formData, setFormData] = useState({
     name: "",
@@ -43,6 +45,7 @@ export default function BookTable() {
     } catch (err) {
       setError(err.message || "Failed to book the table. Please try again.");
     }
+    navigate("/my-bookings");
   };
 
   return (

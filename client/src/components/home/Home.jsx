@@ -27,7 +27,7 @@ export default function Home() {
       </div>
 
       <div className="top-three">
-        {error && <p className="error-message">{error}</p>}{" "}
+        {error && <p className="error-message">{error}</p>}
         {products.length === 0 ? (
           <p>No products available.</p>
         ) : (
