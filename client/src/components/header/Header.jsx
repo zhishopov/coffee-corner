@@ -23,6 +23,9 @@ export default function Header() {
           <Link to="/register" className="link">
             Register
           </Link>
+          <Link to="/book-table" className="link">
+            Book Table
+          </Link>
         </nav>
       </header>
     </>

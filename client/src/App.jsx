@@ -5,6 +5,7 @@ import Home from "./components/home/Home";
 import Menu from "./components/menu/Menu";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import BookTable from "./components/book-table/BookTable";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route index element={<Home></Home>}></Route>
         <Route path="/menu" element={<Menu></Menu>}></Route>
+        <Route path="/book-table" element={<BookTable></BookTable>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
