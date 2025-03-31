@@ -1,6 +1,7 @@
 import { useCallback, useContext, useMemo } from "react";
-import { UserContext } from "../contexts/UserContext";
-import request from "../utils/request";
+
+import { UserContext } from "../../contexts/UserContext";
+import request from "../../utils/request";
 
 export default function useAuth() {
   const { accessToken, ...authData } = useContext(UserContext);

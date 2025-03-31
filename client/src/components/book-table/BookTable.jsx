@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useCreateBooking } from "../../api/bookingApi";
 import "./BookTable.css";
 
 export default function BookTable() {
+  const { create } = useCreateBooking();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,13 +13,17 @@ export default function BookTable() {
   });
 
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setMessage("");
+    setError("");
 
     if (
       !formData.name ||
@@ -26,17 +32,19 @@ export default function BookTable() {
       !formData.time ||
       !formData.guests
     ) {
-      setMessage("Please fill in all fields.");
+      setError("Please fill in all fields.");
       return;
     }
 
-    // Here, you could send the reservation to the backend
-    console.log("Reservation Details:", formData);
-    setMessage("Your table has been booked successfully!");
-
-    // Clear form
-    setFormData({ name: "", email: "", date: "", time: "", guests: "" });
+    try {
+      await create(formData);
+      setMessage("Your table has been booked successfully!");
+      setFormData({ name: "", email: "", date: "", time: "", guests: "" });
+    } catch (err) {
+      setError(err.message || "Failed to book the table. Please try again.");
+    }
   };
+
   return (
     <div className="book-table">
       <h2>Book a Table</h2>
@@ -91,7 +99,8 @@ export default function BookTable() {
         <button type="submit">Book Now</button>
       </form>
 
-      {message && <p className="message">{message}</p>}
+      {message && <p className="message success">{message}</p>}
+      {error && <p className="message error">{error}</p>}
     </div>
   );
 }
