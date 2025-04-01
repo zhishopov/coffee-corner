@@ -13,7 +13,7 @@
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.8s ease;
 }
 
 .product-card:hover {

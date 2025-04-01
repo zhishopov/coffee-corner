@@ -37,6 +37,7 @@ export default function Home() {
       </div>
 
       <div className="top-three">
+        <h2>Best Sellers</h2>
         {error && <p className="error-message">{error}</p>}
         {products.length === 0 ? (
           <p>No products available.</p>

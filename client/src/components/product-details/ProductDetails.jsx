@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router"; // Corrected import path
 import { getProductById } from "../../api/menuApi";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
-  const { id } = useParams();
+  const { id } = useParams(); // id comes from the URL
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    getProductById(id)
+    getProductById(id) // Pass the product ID
       .then((data) => {
+        console.log("Fetched Product:", data); // Log the data for debugging
         setProduct(data);
       })
       .catch((error) => {

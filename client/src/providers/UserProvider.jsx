@@ -17,8 +17,6 @@ export default function UserProvider({ children }) {
   });
 
   useEffect(() => {
-    console.log("Auth Data Updated:", authData);
-
     if (authData) {
       localStorage.setItem("auth", JSON.stringify(authData));
     } else {
