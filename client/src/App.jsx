@@ -18,6 +18,7 @@ import Logout from "./components/logout/Logout";
 import ProductDetails from "./components/product-details/ProductDetails";
 import Footer from "./components/footer/Footer";
 import NotFound from "./components/not-found/NotFound";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               <Route path="/my-bookings" element={<MyBookings />} />
               <Route path="/logout" element={<Logout></Logout>}></Route>
             </Route>
+            <Route path="/contact" element={<Contact></Contact>}></Route>
             <Route path="*" element={<NotFound></NotFound>}></Route>
           </Routes>
         </main>

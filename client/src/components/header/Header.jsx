@@ -20,6 +20,9 @@ export default function Header() {
         <Link to="/menu" className="link">
           Menu
         </Link>
+        <Link to="/contact" className="link">
+          Contact
+        </Link>
 
         {!isAuthenticated ? (
           <>
