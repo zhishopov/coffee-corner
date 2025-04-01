@@ -29,7 +29,7 @@
 }
 
 .top-three {
-  background-color: #f5f5f5;
+  background-color: #f4780b;
   padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +40,7 @@
 
 .product-box {
   width: 200px;
-  background-color: #f4780b;
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -56,6 +56,7 @@
 
 .product-box h3 {
   font-family: "Sora", sans-serif;
+  color: #f4780b;
   font-size: 1.2rem;
   margin-top: 1rem;
 }
