@@ -49,8 +49,8 @@ Menu: View available products and click "Details" to see more information.
 Book a Table: Fill in the form to book a table. Edit or cancel your booking using the provided options.
 
 **Technologies Used**
-React (with Vite),
-React Router,
-Context API for state management,
-Custom hooks for API calls and authentication,
+React (with Vite)
+React Router
+Context API for state management
+Custom hooks for API calls and authentication
 CSS for styling
