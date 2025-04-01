@@ -12,6 +12,7 @@
   width: 200px;
   height: 50px;
   background-color: #f4780b;
+  text-decoration: none;
   color: white;
   font-family: "Pacifico", serif;
   font-size: 1.5rem;
@@ -29,7 +30,7 @@
 }
 
 .top-three {
-  background-color: #f4780b;
+  background-color: rgba(244, 120, 11, 0.3);
   padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;

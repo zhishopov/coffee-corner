@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { getAllProducts } from "../../api/menuApi";
 import "./Home.css";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getAllProducts()
@@ -18,12 +19,21 @@ export default function Home() {
       });
   }, []);
 
+  const handleBookTableClick = () => {
+    const authData = JSON.parse(localStorage.getItem("auth"));
+    if (authData?.accessToken) {
+      navigate("/book-table");
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <>
       <div className="main-content">
-        <Link to="/book-table" className="browse">
+        <button onClick={handleBookTableClick} className="browse">
           Book a Table
-        </Link>
+        </button>
       </div>
 
       <div className="top-three">
