@@ -12,7 +12,7 @@ export default function Contact() {
     setSuccess(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.name || !form.email || !form.message) {
@@ -20,9 +20,24 @@ export default function Contact() {
       return;
     }
 
-    console.log("Contact form submitted:", form);
-    setSuccess("Thank you for reaching out! We will get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
+    try {
+      const response = await fetch("http://localhost:3030/jsonstore/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message. Please try again.");
+      }
+
+      setSuccess("Thank you for reaching out! We will get back to you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
