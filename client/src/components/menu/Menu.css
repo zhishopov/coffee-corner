@@ -43,9 +43,10 @@
   font-size: 18px;
   font-weight: bold;
   color: #e07a3e;
+  margin-bottom: 20px;
 }
 
-.product-card button {
+.details-link {
   background-color: rgba(244, 162, 97, 0.9);
   color: white;
   border: none;
@@ -58,11 +59,11 @@
   margin-top: 10px;
 }
 
-.product-card button:hover {
+.details-link:hover {
   background-color: rgba(224, 122, 62, 0.9);
   transform: scale(1.05);
 }
 
-.product-card button:active {
+.details-link:active {
   transform: scale(0.95);
 }

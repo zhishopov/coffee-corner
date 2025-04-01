@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import { getAllProducts } from "../../api/menuApi";
 import "./Menu.css";
 
@@ -9,8 +10,6 @@ export default function Menu() {
   useEffect(() => {
     getAllProducts()
       .then((data) => {
-        console.log("Fetched products:", data);
-
         if (data.length > 0) {
           setProducts(data);
         } else {
@@ -40,9 +39,10 @@ export default function Menu() {
               />
               <div className="product-info">
                 <h2>{product.name}</h2>
-                <p className="description">{product.description}</p>
                 <p className="price">£{product.price}</p>
-                <button>Details</button>
+                <Link to={`/products/${product._id}`} className="details-link">
+                  Details
+                </Link>
               </div>
             </div>
           ))}

@@ -15,6 +15,7 @@ import UserProvider from "./providers/UserProvider";
 import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
 import Logout from "./components/logout/Logout";
+import ProductDetails from "./components/product-details/ProductDetails";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path="/menu" element={<Menu />} />
+            <Route
+              path="/products/:id"
+              element={<ProductDetails></ProductDetails>}
+            ></Route>
 
             <Route path="/book-table" element={<BookTable />} />
 

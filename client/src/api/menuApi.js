@@ -18,13 +18,18 @@ export const getAllProducts = async () => {
 
 export const getProductById = async (id) => {
   try {
-    const result = await request.get(`${baseUrl}/${id}`);
+    const response = await request.get(`${baseUrl}/${id}`);
 
-    if (!result || typeof result !== "object") {
+    const contentType = response.headers["content-type"];
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new Error("Invalid response format: No JSON content type.");
+    }
+
+    if (!response || typeof response !== "object") {
       throw new Error("Invalid response format.");
     }
 
-    return result; // Return the product object
+    return response;
   } catch (error) {
     throw new Error(error.message || "Failed to fetch product details");
   }

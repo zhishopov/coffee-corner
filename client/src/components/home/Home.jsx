@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import { getAllProducts } from "../../api/menuApi";
 import "./Home.css";
 
@@ -9,11 +10,8 @@ export default function Home() {
   useEffect(() => {
     getAllProducts()
       .then((result) => {
-        if (result && result.products) {
-          setProducts(result.products.slice(0, 3));
-        } else {
-          setError("No products found.");
-        }
+        console.log("Fetched Products:", result);
+        setProducts(result.slice(0, 3));
       })
       .catch((error) => {
         setError(error.message || "Failed to fetch products.");
@@ -23,7 +21,9 @@ export default function Home() {
   return (
     <>
       <div className="main-content">
-        <button className="browse">Book a Table</button>
+        <Link to="/book-table" className="browse">
+          Book a Table
+        </Link>
       </div>
 
       <div className="top-three">
@@ -31,8 +31,8 @@ export default function Home() {
         {products.length === 0 ? (
           <p>No products available.</p>
         ) : (
-          products.map((product, index) => (
-            <div key={index} className="product-box">
+          products.map((product) => (
+            <div key={product._id} className="product-box">
               <img
                 src={product.image}
                 alt={product.name}

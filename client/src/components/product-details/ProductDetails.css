@@ -1,0 +1,27 @@
+.product-details-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.product-details-container img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-details-container .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e07a3e;
+}
+
+.product-details-container h2 {
+  color: #d48426;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

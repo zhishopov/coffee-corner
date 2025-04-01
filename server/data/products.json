@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "_id": 1,
       "name": "Espresso",
       "price": 2.5,
       "description": "Strong and bold espresso shot.",
@@ -8,13 +9,16 @@
       "likes": 0
     },
     {
+      "_id": 2,
       "name": "Latte",
       "price": 3.5,
       "description": "Creamy latte with steamed milk.",
       "image": "images/latte.webp",
-      "likes": 0
+      "likes": 0,
+      "bestSeller": true
     },
     {
+      "_id": 3,
       "name": "Cappuccino",
       "price": 3.0,
       "description": "Rich cappuccino with a velvety foam.",
@@ -22,6 +26,7 @@
       "likes": 0
     },
     {
+      "_id": 4,
       "name": "Americano",
       "price": 2.75,
       "description": "Smooth Americano for a gentle start.",
@@ -29,6 +34,7 @@
       "likes": 0
     },
     {
+      "_id": 5,
       "name": "Mocha",
       "price": 3.75,
       "description": "Delicious mocha with a hint of chocolate.",
@@ -36,13 +42,16 @@
       "likes": 0
     },
     {
+      "_id": 6,
       "name": "Sausage Roll",
       "price": 2.0,
       "description": "Flaky pastry filled with seasoned sausage.",
       "image": "images/sausage-roll.avif",
-      "likes": 0
+      "likes": 0,
+      "bestSeller": true
     },
     {
+      "_id": 7,
       "name": "Bacon Bap",
       "price": 2.5,
       "description": "Toasted bap loaded with crispy bacon and butter.",
@@ -50,6 +59,7 @@
       "likes": 0
     },
     {
+      "_id": 8,
       "name": "Croissant",
       "price": 2.75,
       "description": "Buttery, flaky croissant, freshly baked.",
@@ -57,13 +67,16 @@
       "likes": 0
     },
     {
+      "_id": 9,
       "name": "Muffin",
       "price": 2.25,
       "description": "Moist muffin available in blueberry or chocolate chip.",
       "image": "images/muffin.avif",
-      "likes": 0
+      "likes": 0,
+      "bestSeller": true
     },
     {
+      "_id": 10,
       "name": "Scone",
       "price": 2.0,
       "description": "Traditional scone served with jam and clotted cream.",
@@ -71,6 +84,7 @@
       "likes": 0
     },
     {
+      "_id": 11,
       "name": "Bagel with Cream Cheese",
       "price": 3.0,
       "description": "Freshly baked bagel topped with smooth cream cheese.",
@@ -78,6 +92,7 @@
       "likes": 0
     },
     {
+      "_id": 12,
       "name": "Bacon Sandwich",
       "price": 4.0,
       "description": "Crispy bacon with lettuce and tomato on artisan bread.",
@@ -85,6 +100,7 @@
       "likes": 0
     },
     {
+      "_id": 13,
       "name": "Ham & Cheese Toastie",
       "price": 3.5,
       "description": "Grilled toastie with ham and melted cheese.",
@@ -92,6 +108,7 @@
       "likes": 0
     },
     {
+      "_id": 14,
       "name": "Veggie Quiche",
       "price": 4.5,
       "description": "Savory quiche filled with fresh vegetables and cheese.",
@@ -99,6 +116,7 @@
       "likes": 0
     },
     {
+      "_id": 15,
       "name": "Chicken Salad Wrap",
       "price": 5.0,
       "description": "Healthy wrap with grilled chicken and crisp veggies.",
@@ -106,6 +124,7 @@
       "likes": 0
     },
     {
+      "_id": 16,
       "name": "Cheese Danish",
       "price": 3.0,
       "description": "Sweet Danish pastry with a rich cheese filling.",
@@ -113,6 +132,7 @@
       "likes": 0
     },
     {
+      "_id": 17,
       "name": "Fruit Tart",
       "price": 4.0,
       "description": "Pastry tart filled with cream and topped with fresh fruit.",
@@ -120,6 +140,7 @@
       "likes": 0
     },
     {
+      "_id": 18,
       "name": "Blueberry Muffin",
       "price": 2.5,
       "description": "Delicious muffin bursting with blueberries.",
@@ -127,6 +148,7 @@
       "likes": 0
     },
     {
+      "_id": 19,
       "name": "Chocolate Cake Slice",
       "price": 3.75,
       "description": "Rich slice of chocolate cake with creamy frosting.",
@@ -134,6 +156,7 @@
       "likes": 0
     },
     {
+      "_id": 20,
       "name": "Carrot Cake",
       "price": 3.5,
       "description": "Moist carrot cake with a light cream cheese frosting.",
