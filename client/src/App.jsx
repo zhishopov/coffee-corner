@@ -14,6 +14,7 @@ import UserProvider from "./providers/UserProvider";
 
 import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
+import Logout from "./components/logout/Logout";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
             <Route element={<AuthGuard />}>
               <Route path="/my-bookings" element={<MyBookings />} />
+              <Route path="/logout" element={<Logout></Logout>}></Route>
             </Route>
           </Routes>
         </main>

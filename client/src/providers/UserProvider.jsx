@@ -3,16 +3,22 @@ import { UserContext } from "../contexts/UserContext";
 
 export default function UserProvider({ children }) {
   const [authData, setAuthData] = useState(() => {
-    try {
-      const storedUser = localStorage.getItem("auth");
-      return storedUser ? JSON.parse(storedUser) : null;
-    } catch (error) {
-      console.error("Error parsing auth data:", error);
-      return null;
+    const storedUser = localStorage.getItem("auth");
+    if (storedUser) {
+      try {
+        const parsedUser = JSON.parse(storedUser);
+        return parsedUser.accessToken ? parsedUser : null;
+      } catch (error) {
+        console.error("Failed to parse auth data:", error);
+        return null;
+      }
     }
+    return null;
   });
 
   useEffect(() => {
+    console.log("Auth Data Updated:", authData);
+
     if (authData) {
       localStorage.setItem("auth", JSON.stringify(authData));
     } else {
@@ -22,12 +28,13 @@ export default function UserProvider({ children }) {
 
   const userLoginHandler = (user) => {
     console.log("Logging in user:", user);
-    setAuthData(user); // Store user data in state
+    setAuthData(user);
   };
 
   const userLogoutHandler = () => {
     console.log("Logging out user");
-    setAuthData(null); // Clear user data
+    setAuthData(null);
+    localStorage.removeItem("auth");
   };
 
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import request from "../utils/request";
 import { UserContext } from "../contexts/UserContext";
 
@@ -44,18 +44,23 @@ export const useRegister = () => {
 export const useLogout = () => {
   const { authData, userLogoutHandler } = useContext(UserContext);
 
-  useEffect(() => {
-    if (!authData?.accessToken) return;
+  const logout = async () => {
+    if (!authData || !authData.accessToken) {
+      console.warn("No access token found. User is already logged out.");
+      userLogoutHandler();
+      return;
+    }
 
-    const options = {
-      headers: { "X-Authorization": authData.accessToken },
-    };
+    try {
+      await request.get(`${baseUrl}/logout`, null, {
+        headers: { "X-Authorization": authData.accessToken },
+      });
+    } catch (error) {
+      console.error("Logout failed:", error.message);
+    } finally {
+      userLogoutHandler();
+    }
+  };
 
-    request
-      .get(`${baseUrl}/logout`, null, options)
-      .catch((error) => console.error("Logout failed:", error.message))
-      .finally(userLogoutHandler);
-  }, [authData, userLogoutHandler]);
-
-  return { isLoggedOut: !authData };
+  return { logout };
 };

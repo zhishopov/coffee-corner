@@ -4,6 +4,7 @@ import "./Header.css";
 
 export default function Header() {
   const { authData } = useUserContext();
+  const isAuthenticated = authData && authData.accessToken;
 
   return (
     <header>
@@ -19,7 +20,8 @@ export default function Header() {
         <Link to="/menu" className="link">
           Menu
         </Link>
-        {!authData && (
+
+        {!isAuthenticated ? (
           <>
             <Link to="/login" className="link">
               Login
@@ -28,11 +30,18 @@ export default function Header() {
               Register
             </Link>
           </>
-        )}
-        {authData && (
-          <Link to="/my-bookings" className="link">
-            My Bookings
-          </Link>
+        ) : (
+          <>
+            <Link to="/book-table" className="link">
+              Book a Table
+            </Link>{" "}
+            <Link to="/my-bookings" className="link">
+              My Bookings
+            </Link>
+            <Link to="/logout" className="link">
+              Logout
+            </Link>
+          </>
         )}
       </nav>
     </header>

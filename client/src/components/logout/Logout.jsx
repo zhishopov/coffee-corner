@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { useUserContext } from "../../contexts/UserContext";
 import { useLogout } from "../../api/authApi";
 import "./Logout.css";
 
 export default function Logout() {
   const { logout } = useLogout();
-  const { setUser } = useUserContext();
   const navigate = useNavigate();
 
   useEffect(() => {
-    logout();
-    setUser(null);
-    navigate("/login");
-  }, [logout, setUser, navigate]);
+    const handleLogout = async () => {
+      await logout();
+      navigate("/login");
+    };
+
+    handleLogout();
+  }, [logout, navigate]);
 
   return (
     <div className="logout-container">
