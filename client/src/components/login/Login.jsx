@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import "./login.css";
 import { useLogin } from "../../api/authApi";
 
@@ -72,6 +72,9 @@ export default function Login() {
             Login
           </button>
         </div>
+        <p className="register-link">
+          Don&apos;t have an account? <Link to="/register">Register</Link>
+        </p>
       </form>
 
       {error && <p className="error-message">{error}</p>}
