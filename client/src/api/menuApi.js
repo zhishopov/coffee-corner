@@ -15,3 +15,17 @@ export const getAllProducts = async () => {
     throw new Error(error.message || "Failed to fetch products");
   }
 };
+
+export const getProductById = async (id) => {
+  try {
+    const result = await request.get(`${baseUrl}/${id}`);
+
+    if (!result || typeof result !== "object") {
+      throw new Error("Invalid response format.");
+    }
+
+    return result; // Return the product object
+  } catch (error) {
+    throw new Error(error.message || "Failed to fetch product details");
+  }
+};
