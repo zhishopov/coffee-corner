@@ -47,3 +47,8 @@
   color: red;
   font-weight: bold;
 }
+
+.product-description {
+  font-size: 40px;
+  color: #d48426;
+}

@@ -9,7 +9,7 @@ export const getAllProducts = async () => {
       throw new Error("Invalid response format.");
     }
 
-    return result.products; // Return the array of products
+    return result.products;
   } catch (error) {
     throw new Error(error.message || "Failed to fetch products");
   }
@@ -22,7 +22,6 @@ export const getProductById = async (_id) => {
       throw new Error("Invalid response format.");
     }
 
-    // Find the product by ID
     const product = result.products.find(
       (product) => product._id.toString() === _id.toString()
     );
