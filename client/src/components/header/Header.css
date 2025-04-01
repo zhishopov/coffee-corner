@@ -34,9 +34,10 @@ h1 {
   text-decoration: none;
   font-weight: bold;
   font-size: 30px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border-radius: 10px;
-  margin: 80px;
+  margin: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .link:hover {
@@ -44,16 +45,41 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  #heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .link {
+    font-size: 20px;
+    padding: 12px 24px;
+    margin: 15px;
+  }
+
   nav {
     flex-direction: column;
     align-items: center;
   }
 
-  .link {
-    padding: 10px 20px;
+  header {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #heading {
+    font-size: 30px;
+    margin-bottom: 15px;
   }
 
-  header {
-    padding: 15px 0;
+  .link {
+    font-size: 18px;
+    padding: 12px 20px;
+    margin: 10px;
   }
 }
