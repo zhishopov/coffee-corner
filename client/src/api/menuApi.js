@@ -6,11 +6,11 @@ export const getAllProducts = async () => {
   try {
     const result = await request.get(baseUrl);
 
-    if (!result || typeof result !== "object") {
+    if (!result || !result.products) {
       throw new Error("Invalid response format.");
     }
 
-    return Object.values(result);
+    return result.products;
   } catch (error) {
     throw new Error(error.message || "Failed to fetch products");
   }

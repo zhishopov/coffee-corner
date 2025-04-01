@@ -31,8 +31,8 @@ export default function Menu() {
         <p>Loading products...</p>
       ) : (
         <div className="menu-grid">
-          {products.map((product) => (
-            <div key={product._id} className="product-card">
+          {products.map((product, index) => (
+            <div key={index} className="product-card">
               <img
                 src={product.image}
                 alt={product.name}
