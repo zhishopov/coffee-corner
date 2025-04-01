@@ -31,7 +31,6 @@ export default function ProductDetails() {
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} className="product-image" />
       <p>{product.description}</p>
-      <p className="price">£{product.price}</p>
     </div>
   );
 }
