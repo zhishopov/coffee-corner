@@ -16,6 +16,7 @@ import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
 import Logout from "./components/logout/Logout";
 import ProductDetails from "./components/product-details/ProductDetails";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             </Route>
           </Routes>
         </main>
+        <Footer></Footer>
       </div>
     </UserProvider>
   );
