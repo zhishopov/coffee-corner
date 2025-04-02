@@ -37,7 +37,12 @@ export default function UserProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{ authData, userLoginHandler, userLogoutHandler }}
+      value={{
+        authData,
+        userId: authData?._id,
+        userLoginHandler,
+        userLogoutHandler,
+      }}
     >
       {children}
     </UserContext.Provider>

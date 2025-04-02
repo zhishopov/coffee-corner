@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import request from "../utils/request";
 import useAuth from "../components/hooks/useAuth";
 
-const baseUrl = "http://localhost:3030/jsonstore/bookings";
+const baseUrl = "http://localhost:3030/data/bookings";
 
 export const useBookings = () => {
   const [bookings, setBookings] = useState([]);

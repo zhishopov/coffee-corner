@@ -17,9 +17,7 @@ export default function MyBookings() {
   const [editData, setEditData] = useState({});
 
   useEffect(() => {
-    setUserBookings(
-      Object.values(bookings).filter((booking) => booking.userId === userId)
-    );
+    setUserBookings(bookings.filter((booking) => booking._ownerId === userId));
   }, [bookings, userId]);
 
   const handleEditChange = (e) => {
