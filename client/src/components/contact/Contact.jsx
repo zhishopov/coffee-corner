@@ -20,14 +20,21 @@ export default function Contact() {
       return;
     }
 
+    const authData = JSON.parse(localStorage.getItem("auth"));
+    const token = authData?.accessToken;
+
     try {
-      const response = await fetch("http://localhost:3030/jsonstore/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      const response = await fetch(
+        "http://localhost:3030/data/contactMessages",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            ...(token && { "X-Authorization": token }),
+          },
+          body: JSON.stringify(form),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to send message. Please try again.");

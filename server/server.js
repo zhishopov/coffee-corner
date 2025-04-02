@@ -1455,6 +1455,7 @@
     sessions: {},
   };
   var seedData = {
+    contactMessages: {},
     bookings: [],
     products: [
       {
