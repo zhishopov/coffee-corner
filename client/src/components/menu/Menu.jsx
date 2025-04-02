@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router"; 
+import { Link } from "react-router";
 import { getAllProducts } from "../../api/menuApi";
 import "./Menu.css";
 
@@ -18,7 +18,9 @@ export default function Menu() {
         }
       })
       .catch((error) => {
-        setError(error.message || "Something went wrong while fetching products.");
+        setError(
+          error.message || "Something went wrong while fetching products."
+        );
       })
       .finally(() => {
         setLoading(false);
@@ -34,11 +36,18 @@ export default function Menu() {
         <div className="menu-grid">
           {products.map((product) => (
             <div key={product._id} className="product-card">
-              <img src={product.image} alt={product.name} className="product-image" />
+              <img
+                src={product.image}
+                alt={product.name}
+                className="product-image"
+              />
               <div className="product-info">
                 <h2>{product.name}</h2>
                 <p className="price">£{product.price}</p>
-                <Link to={`/products/${product._id}`} className="details-link">
+                <Link
+                  to={`/menu/products/${product._id}`}
+                  className="details-link"
+                >
                   Details
                 </Link>
               </div>
