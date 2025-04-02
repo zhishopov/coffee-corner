@@ -23,13 +23,18 @@ export default function Register() {
     e.preventDefault();
     setError("");
 
-    if (formData.password !== formData.rePassword) {
-      setError("Passwords do not match.");
+    if (!formData.email || !formData.password || !formData.rePassword) {
+      setError("All fields are required.");
       return;
     }
 
-    if (!formData.email || !formData.password || !formData.rePassword) {
-      setError("All fields are required.");
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    if (formData.password !== formData.rePassword) {
+      setError("Passwords do not match.");
       return;
     }
 
@@ -85,14 +90,13 @@ export default function Register() {
             />
           </label>
         </div>
+        {error && <p className="error-message">{error}</p>}
         <div>
           <button id="register-btn" type="submit">
             Register
           </button>
         </div>
       </form>
-
-      {error && <p className="error-message">{error}</p>}
       {message && <p className="success-message">{message}</p>}
     </div>
   );
