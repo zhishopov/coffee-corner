@@ -27,17 +27,19 @@ const request = async (method, url, data, options = {}) => {
     }
 
     const response = await fetch(url, options);
-    const responseContentType = response.headers.get("Content-Type");
+    const responseText = await response.text();
 
-    if (!responseContentType) {
-      throw new Error("Invalid response: No content type");
+
+    const responseContentType = response.headers.get("Content-Type");
+    if (!responseContentType || !responseContentType.includes("application/json")) {
+      throw new Error("Invalid response: No JSON content type");
     }
 
     let result;
     try {
-      result = await response.json();
+      result = JSON.parse(responseText);
     } catch (error) {
-      throw new Error(error.message);
+      throw new Error("Failed to parse JSON: " + error.message);
     }
 
     if (!response.ok) {

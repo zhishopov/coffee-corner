@@ -1,6 +1,6 @@
 {
-  "products": [
-    {
+  "products": {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b202": {
       "_id": 1,
       "name": "Espresso",
       "price": 2.5,
@@ -8,7 +8,7 @@
       "image": "/images/coffee.jpg",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b225":{
       "_id": 2,
       "name": "Latte",
       "price": 3.5,
@@ -17,7 +17,7 @@
       "likes": 0,
       "bestSeller": true
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b219": {
       "_id": 3,
       "name": "Cappuccino",
       "price": 3.0,
@@ -25,7 +25,7 @@
       "image": "/images/cappuccino.avif",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b210": {
       "_id": 4,
       "name": "Americano",
       "price": 2.75,
@@ -33,7 +33,7 @@
       "image": "/images/americano.avif",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b287": {
       "_id": 5,
       "name": "Mocha",
       "price": 3.75,
@@ -41,7 +41,7 @@
       "image": "/images/mocha.avif",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b254": {
       "_id": 6,
       "name": "Sausage Roll",
       "price": 2.0,
@@ -50,7 +50,7 @@
       "likes": 0,
       "bestSeller": true
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b242": {
       "_id": 7,
       "name": "Bacon Bap",
       "price": 2.5,
@@ -58,7 +58,7 @@
       "image": "/images/bacon-bap.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b278": {
       "_id": 8,
       "name": "Croissant",
       "price": 2.75,
@@ -66,7 +66,7 @@
       "image": "/images/croissant.avif",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b256": {
       "_id": 9,
       "name": "Muffin",
       "price": 2.25,
@@ -75,7 +75,7 @@
       "likes": 0,
       "bestSeller": true
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b245": {
       "_id": 10,
       "name": "Scone",
       "price": 2.0,
@@ -83,7 +83,7 @@
       "image": "/images/scone.avif",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b223": {
       "_id": 11,
       "name": "Bagel with Cream Cheese",
       "price": 3.0,
@@ -91,7 +91,7 @@
       "image": "/images/bagel-cream-cheese.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b299": {
       "_id": 12,
       "name": "Bacon Sandwich",
       "price": 4.0,
@@ -99,7 +99,7 @@
       "image": "/images/bacon-sandwich.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b212": {
       "_id": 13,
       "name": "Ham & Cheese Toastie",
       "price": 3.5,
@@ -107,7 +107,7 @@
       "image": "/images/ham-cheese-toastie.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b297": {
       "_id": 14,
       "name": "Veggie Quiche",
       "price": 4.5,
@@ -115,7 +115,7 @@
       "image": "/images/veggie-quiche.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b296": {
       "_id": 15,
       "name": "Chicken Salad Wrap",
       "price": 5.0,
@@ -123,7 +123,7 @@
       "image": "images/chicken-salad-wrap.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b295": {
       "_id": 16,
       "name": "Cheese Danish",
       "price": 3.0,
@@ -131,7 +131,7 @@
       "image": "/images/cheese-danish.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b294": {
       "_id": 17,
       "name": "Fruit Tart",
       "price": 4.0,
@@ -139,7 +139,7 @@
       "image": "/images/fruit-tart.webp",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b293": {
       "_id": 18,
       "name": "Blueberry Muffin",
       "price": 2.5,
@@ -147,7 +147,7 @@
       "image": "/images/blueberry-muffin.avif",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b292": {
       "_id": 19,
       "name": "Chocolate Cake Slice",
       "price": 3.75,
@@ -155,7 +155,7 @@
       "image": "/images/chocolate-cake.avif",
       "likes": 0
     },
-    {
+    "3987279d-0ad4-4afb-8ca9-5b256ae3b291": {
       "_id": 20,
       "name": "Carrot Cake",
       "price": 3.5,
@@ -163,5 +163,5 @@
       "image": "/images/carrot-cake.avif",
       "likes": 0
     }
-  ]
+  }
 }

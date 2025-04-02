@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router"; 
 import { getAllProducts } from "../../api/menuApi";
 import "./Menu.css";
 
 export default function Menu() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getAllProducts()
@@ -17,26 +18,23 @@ export default function Menu() {
         }
       })
       .catch((error) => {
-        setError(
-          error.message || "Something went wrong while fetching products."
-        );
+        setError(error.message || "Something went wrong while fetching products.");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
   return (
     <div className="menu-container">
       {error && <p className="error-message">{error}</p>}
-      {products.length === 0 ? (
+      {loading ? (
         <p>Loading products...</p>
       ) : (
         <div className="menu-grid">
           {products.map((product) => (
             <div key={product._id} className="product-card">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="product-image"
-              />
+              <img src={product.image} alt={product.name} className="product-image" />
               <div className="product-info">
                 <h2>{product.name}</h2>
                 <p className="price">£{product.price}</p>
