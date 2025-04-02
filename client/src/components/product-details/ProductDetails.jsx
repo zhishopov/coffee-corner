@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { getProductById } from "../../api/menuApi";
 import "./ProductDetails.css";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -29,6 +30,9 @@ export default function ProductDetails() {
 
   return (
     <div className="product-details-container">
+      <Link to="/menu" className="back-menu">
+        <FaArrowLeftLong></FaArrowLeftLong>
+      </Link>
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} className="product-image" />
       <p className="product-description">{product.description}</p>
